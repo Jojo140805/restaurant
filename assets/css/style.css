@@ -2066,3 +2066,17 @@ textarea.input-field {
   }
 
 }
+
+
+.navbar-link {
+  color: gray; /* Default color */
+  text-decoration: none;
+}
+
+.navbar-link.active {
+  color: gold; /* Active color for the Menus link */
+}
+
+.navbar-link.active-home {
+  color: white; /* Active color for the Home link */
+}

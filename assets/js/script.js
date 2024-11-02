@@ -167,4 +167,24 @@ window.addEventListener("mousemove", function (event) {
     parallaxItems[i].style.transform = `translate3d(${x}px, ${y}px, 0px)`;
   }
 
-});
+});// Select the navigation links and the corresponding sections
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll(".navbar-link");
+
+// Function to update the active link based on scroll position
+function updateActiveLink() {
+  let index = sections.length;
+
+  while (--index && window.scrollY + 50 < sections[index].offsetTop) {}
+
+  navLinks.forEach((link) => link.classList.remove("active", "active-home"));
+  
+  if (navLinks[index].getAttribute("href") === "#home") {
+    navLinks[index].classList.add("active-home"); // Apply white color for "Home"
+  } else {
+    navLinks[index].classList.add("active"); // Apply gold color for other links
+  }
+}
+
+// Event listener for scroll to update active link
+window.addEventListener("scroll", updateActiveLink);
